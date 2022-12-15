@@ -8,8 +8,8 @@ import osmnx as ox
 import geopandas as gpd
 import numpy as np
 from shapely.geometry import LineString, mapping
-from energy_model.models.fastsim_model import fastsim_energy_model
-from energy_model.models.simple_energy_model import ev_energy_model
+from route_estimator.models.fastsim_model import fastsim_energy_model
+from route_estimator.models.simple_energy_model import ev_energy_model
 import math
 from multiprocessing import Process, Value
 import torch
