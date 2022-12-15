@@ -14,6 +14,8 @@ import math
 from multiprocessing import Process, Value
 import torch
 
+CARLA_Path = "./CarlaUE4.sh"
+
 outputs = [(0.1, 0), (0.2, 0), (0.3, 0), (0.4, 0), (0.5, 0), (0.6, 0), (0.7, 0), (0.8, 0), (0.9, 0), (0, 0), (1, 0), (0, 0.1), (0, 0.2), (0, 0.3), (0, 0.4), (0, 0.5), (0, 0.6), (0, 0.7), (0, 0.8), (0, 0.9), (0, 1)]
 
 agentType = "roadVisible" # "instantaneous" or "roadVisible"
@@ -44,7 +46,7 @@ except:
 energyModel = ev_energy_model(1580, 0.19, 2.55)
 
 def startCarla():
-    os.system("bash /home/chris/Downloads/CARLA_0.9.13/CarlaUE4.sh")
+    os.system("bash " + CARLA_Path)
 
 if(agentType == "instantaneous"):
     class NeuralNetwork(torch.nn.Module):
